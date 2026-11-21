@@ -104,6 +104,7 @@ function run(): void {
 
   process.stdout.write(
     `token radar: ${snapshot.protocols.length} protocols, ${snapshot.watchlist.length} on the watchlist, ${board.length} rows scored (${radar.early_size} early, ${radar.live_size} live set aside)\n` +
+      `token radar: calibration: ${radar.calibration.by_category.length} categories set their own multiple, ${radar.rows.filter((r) => r.calibrated).length} rows calibrated, ${radar.rows.filter((r) => !r.calibrated).length} on the global median ${radar.calibration.global_multiple}\n` +
       `token radar: wrote ${join(out, 'board.json')}, ${join(out, 'data.js')}, ${join(out, 'dashboard')} (${dash.length} files), ${join(out, 'screenshots')} (${shots.length} images) and ${join(out, 'dossier.json')}\n`,
   );
 }
